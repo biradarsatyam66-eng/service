@@ -1,0 +1,20 @@
+<ul class="list-group mt-3" *ngIf="todoarray.length>0;else notodo">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todoarray">
+        <strong>{{todo.todoitem}}</strong>
+
+        <div>
+            <button 
+            (click)="onEdit(todo)"
+            mat-button color="primary"><mat-icon>edit</mat-icon></button>
+
+            <button 
+            (click)="ondelete(todo.todoid)"
+            mat-button color="warn"><mat-icon>delete</mat-icon></button>
+        </div>
+    </li>
+</ul>
+<ng-template #notodo>
+    <p class="alert alert-warning">
+        CURRENTLY NO TODO FOUND !!!
+    </p>
+</ng-template>

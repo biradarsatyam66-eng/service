@@ -1,0 +1,28 @@
+<div class="card m-3">
+    <div class="card-header">
+        <h2 class="m-0">{{isineditmode?'UPDATE TODO':'ADD TODO'}}</h2>
+    </div>
+    <div class="card-body">
+        <form #todoform="ngForm" (ngSubmit)="ontodoAdd()">
+            <div class="form-group">
+                <label for="todoitem">TODO ITEM:-</label>
+                <input 
+                required
+                ngModel
+                name="todoitem"
+                type="text" class="form-control">
+            </div>
+
+            <div>
+                <button 
+                *ngIf="!isineditmode"
+                mat-raised-button color="primary" class="btn-block">ADD TODO</button>
+
+                <button 
+                *ngIf="isineditmode"
+                (click)="onUpdate()"
+                mat-raised-button color="accent" class="btn-block">UPDATE TODO</button>
+            </div>
+        </form>
+    </div>
+</div>
