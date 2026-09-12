@@ -12,6 +12,10 @@ import{MatSnackBarModule} from '@angular/material/snack-bar'
 import{MatButtonModule} from '@angular/material/button'
 import { FormsModule } from '@angular/forms';
 
+import { StdDashboardComponent } from './components/std-dashboard/std-dashboard.component';
+import { StdFormComponent } from './components/std-dashboard/std-form/std-form.component';
+import { StdTableComponent } from './components/std-dashboard/std-table/std-table.component';
+
 
 
 @NgModule({
@@ -19,7 +23,10 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     TodoDashboardComponent,
     TodoFormComponent,
-    TodoListComponent
+    TodoListComponent,
+    StdDashboardComponent,
+    StdFormComponent,
+    StdTableComponent
   ],
   imports: [
     BrowserModule,
