@@ -49,8 +49,9 @@
                 mat-raised-button color="primary" class="btn-block">ADD STD</button>
 
                 <button 
+                (click)="onupdate()"
                 *ngIf="isineditmode"
-                mat-raised-button color="accent" class="btn-block">UPDATE STD</button>
+                mat-raised-button color="accent" type="button" class="btn-block">UPDATE STD</button>
             </div>
         </form>
     </div>

@@ -1,0 +1,10 @@
+<p>{{msg || 'want to delete'}}</p>
+
+<div class="d-flex justify-content-between">
+    <button 
+    (click)="hide(true)"
+    mat-raised-button color="primary" >YES</button>
+    <button 
+    (click)="hide(false)"
+    mat-raised-button color="warn">NO</button>
+</div>

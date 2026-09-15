@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-body">
-        <div class="table-responsive">
+        <div class="table-responsive" *ngIf="stdarr.length>0;else nostd">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -18,11 +18,20 @@
                         <td>{{std.fname}} {{std.lname}}</td>
                         <td>{{std.email}}</td>
                         <td>{{std.contact}}</td>
-                        <td><button mat-icon-button color="primary"><mat-icon>edit</mat-icon></button></td>
-                        <td><button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button></td>
+                        <td><button 
+                            (click)="onedit(std)"
+                            mat-icon-button color="primary"><mat-icon>edit</mat-icon></button></td>
+                        <td><button 
+                            (click)="ondelete(std.stdId)"
+                            mat-icon-button color="warn"><mat-icon>delete</mat-icon></button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<ng-template #nostd>
+    <p class="alert alert-warning">
+        CURRENTLY NO STUDENT FOUND !!!!
+    </p>
+</ng-template>

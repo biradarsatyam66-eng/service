@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { StdDashboardComponent } from './components/std-dashboard/std-dashboard.component';
 import { StdFormComponent } from './components/std-dashboard/std-form/std-form.component';
 import { StdTableComponent } from './components/std-dashboard/std-table/std-table.component';
+import { GetconfirmComponent } from './components/getconfirm/getconfirm.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -26,7 +28,8 @@ import { StdTableComponent } from './components/std-dashboard/std-table/std-tabl
     TodoListComponent,
     StdDashboardComponent,
     StdFormComponent,
-    StdTableComponent
+    StdTableComponent,
+    GetconfirmComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { StdTableComponent } from './components/std-dashboard/std-table/std-tabl
     MatIconModule,
     MatSnackBarModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

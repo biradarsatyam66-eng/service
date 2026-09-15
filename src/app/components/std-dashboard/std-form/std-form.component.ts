@@ -16,12 +16,23 @@ export class StdFormComponent implements OnInit {
 
   isineditmode:boolean = false
   isinvalid:boolean = false
+  editid !: string
 
   constructor(private _stdservice:StdService,
     private _snackbar:SnackbarService
   ) { }
 
   ngOnInit(): void {
+    this._stdservice.editstd$
+    .subscribe({
+      next:res=>{
+        if(res){
+          this.editid = res.stdId
+          this.isineditmode = true
+          this.stdform.form.patchValue(res)
+        }
+      }
+    })
   }
 
   onAddStd(){
@@ -41,4 +52,21 @@ export class StdFormComponent implements OnInit {
     }
   }
 
+  onupdate(){
+    if(this.stdform.valid){
+      this.isinvalid = false
+
+      let updateobj = {...this.stdform.value,stdId:this.editid}
+      this.stdform.reset()
+      this.isineditmode = false
+      this._stdservice.updatestd(updateobj)
+      .subscribe({
+        next:res=>{
+          this._snackbar.onshowsnackbar(res.msg)
+        }
+      })
+    }else{
+      this.isinvalid = true
+    }
+  }
 }
