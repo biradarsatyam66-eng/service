@@ -17,6 +17,11 @@ import { StdFormComponent } from './components/std-dashboard/std-form/std-form.c
 import { StdTableComponent } from './components/std-dashboard/std-table/std-table.component';
 import { GetconfirmComponent } from './components/getconfirm/getconfirm.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PostDashboardComponent } from './components/post-dashboard/post-dashboard.component';
+import { PostFormComponent } from './components/post-dashboard/post-form/post-form.component';
+import { PostCardComponent } from './components/post-dashboard/post-card/post-card.component';
+import { AppRoutingModule } from './app.routing.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -29,7 +34,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     StdDashboardComponent,
     StdFormComponent,
     StdTableComponent,
-    GetconfirmComponent
+    GetconfirmComponent,
+    PostDashboardComponent,
+    PostFormComponent,
+    PostCardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +47,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatButtonModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

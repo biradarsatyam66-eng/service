@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <app-post-form></app-post-form>
+    </div>
+</div>
+
+<hr class="bg-primary">
+
+<div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let post of postarr">
+        <app-post-card
+        [getposts]="post"
+        ></app-post-card>
+    </div>
+</div>

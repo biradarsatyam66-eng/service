@@ -1,0 +1,43 @@
+<div class="card mt-3">
+    <div class="card-header">
+        <h2 class="m-0"><strong>{{isineditmode?'UPDATE POST':'ADD POST'}}</strong></h2>
+    </div>
+    <div class="card-body">
+        <form #postform="ngForm" (ngSubmit)="onAddpost()">
+            <div class="form-group">
+                <label for="title">TITLE :-</label>
+                <input 
+                ngModel
+                name="title"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="userId">USER_ID :-</label>
+                <input 
+                ngModel
+                name="userId"
+                type="number" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="body">BODY :-</label>
+                <textarea 
+                ngModel
+                name="body"
+                class="form-control" rows="5"></textarea>
+            </div>
+
+            <div>
+                <button 
+                *ngIf="!isineditmode"
+                mat-raised-button color="primary" type="submit" class="btn-block">ADD POST</button>
+
+                <button 
+                *ngIf="isineditmode"
+                (click)="updatepost()"
+                mat-raised-button color="accent" type="button" class="btn-block">UPDATE POST</button>
+            </div>
+        </form>
+    </div>
+</div>
