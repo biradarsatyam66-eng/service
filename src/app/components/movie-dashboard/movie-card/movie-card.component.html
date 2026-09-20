@@ -1,0 +1,21 @@
+
+<mat-card class="card bg-secondary h-100 d-flex flex-column">
+  <mat-card-title-group>
+    <mat-card-title>{{getmovies.original_title || getmovies.title}}</mat-card-title>
+    <mat-card-subtitle><span class="badge"
+        [ngClass]="{
+
+        }"
+        >{{getmovies.vote_average}}</span></mat-card-subtitle>
+    <img mat-card-sm-image src="http://image.tmdb.org/t/p/w500/{{getmovies.backdrop_path || getmovies.poster_path}}" >
+  </mat-card-title-group>
+  <hr>
+  <mat-card-content>
+    {{getmovies.overview}}
+  </mat-card-content>
+  <hr>
+  <mat-card-actions class="d-flex justify-content-between mt-auto">
+    <button mat-button class="bg-primary">EDIT</button>
+    <button mat-button class="bg-danger">DELETE</button>
+  </mat-card-actions>
+</mat-card>

@@ -17,11 +17,15 @@ import { StdFormComponent } from './components/std-dashboard/std-form/std-form.c
 import { StdTableComponent } from './components/std-dashboard/std-table/std-table.component';
 import { GetconfirmComponent } from './components/getconfirm/getconfirm.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 import { PostDashboardComponent } from './components/post-dashboard/post-dashboard.component';
 import { PostFormComponent } from './components/post-dashboard/post-form/post-form.component';
 import { PostCardComponent } from './components/post-dashboard/post-card/post-card.component';
 import { AppRoutingModule } from './app.routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MovieDashboardComponent } from './components/movie-dashboard/movie-dashboard.component';
+import { MovieFormComponent } from './components/movie-dashboard/movie-form/movie-form.component';
+import { MovieCardComponent } from './components/movie-dashboard/movie-card/movie-card.component';
 
 
 
@@ -38,7 +42,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PostDashboardComponent,
     PostFormComponent,
     PostCardComponent,
-    NavbarComponent
+    NavbarComponent,
+    MovieDashboardComponent,
+    MovieFormComponent,
+    MovieCardComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatButtonModule,
     FormsModule,
     MatDialogModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
