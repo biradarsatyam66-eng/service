@@ -2,11 +2,13 @@
 <mat-card class="card bg-secondary h-100 d-flex flex-column">
   <mat-card-title-group>
     <mat-card-title>{{getmovies.original_title || getmovies.title}}</mat-card-title>
-    <mat-card-subtitle><span class="badge"
+    <mat-card-subtitle><span class="badge p-1 mt-2"
         [ngClass]="{
-
+          'badge-success':getmovies.vote_average > 7,
+          'badge-warning':getmovies.vote_average >=5 && getmovies.vote_average < 7,
+          'badge-danger':getmovies.vote_average < 5
         }"
-        >{{getmovies.vote_average}}</span></mat-card-subtitle>
+        >&#9733; {{getmovies.vote_average}}</span></mat-card-subtitle>
     <img mat-card-sm-image src="http://image.tmdb.org/t/p/w500/{{getmovies.backdrop_path || getmovies.poster_path}}" >
   </mat-card-title-group>
   <hr>
@@ -15,7 +17,12 @@
   </mat-card-content>
   <hr>
   <mat-card-actions class="d-flex justify-content-between mt-auto">
-    <button mat-button class="bg-primary">EDIT</button>
-    <button mat-button class="bg-danger">DELETE</button>
+    <button 
+    (click)="onEdit(getmovies)"
+    mat-button class="bg-primary">EDIT</button>
+
+    <button 
+    (click)="ondelete(getmovies.id)"
+    mat-button class="bg-danger">DELETE</button>
   </mat-card-actions>
 </mat-card>

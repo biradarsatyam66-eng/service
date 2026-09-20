@@ -1,1 +1,50 @@
-<p>movie-form works!</p>
+<div class="card shadow-lg">
+    <div class="card-header">
+        <h2 class="m-0 text-center"><strong>{{isinEditmode?'UPDATE MOVIE':'ADD MOVIE'}}</strong></h2>
+    </div>
+    <div class="card-body">
+        <form #movieform="ngForm" (ngSubmit)="onAddMovie()">
+            <div class="form-group">
+                <label for="title">TITLE:-</label>
+                <input 
+                ngModel
+                name="title"
+                type="text" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="overview">CONTENT:-</label>
+                <textarea 
+                ngModel
+                name="overview" rows="4" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="vote_average">RATING:-</label>
+                <input 
+                ngModel
+                name="vote_average"
+                type="number" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="poster_path">IMAGE URL:-</label>
+                <input 
+                name="poster_path"
+                ngModel
+                type="url" class="form-control">
+            </div>
+
+            <div>
+                <button 
+                *ngIf="!isinEditmode"
+                mat-raised-button color="primary" class="btn-block">ADD MOVIE</button>
+
+                <button 
+                *ngIf="isinEditmode"
+                (click)="onUpdateMovie()"
+                mat-raised-button color="accent" type="button" class="btn-block">UPDATE MOVIE</button>
+            </div>
+        </form>
+    </div>
+</div>
