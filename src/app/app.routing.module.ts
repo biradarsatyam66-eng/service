@@ -4,6 +4,7 @@ import { TodoDashboardComponent } from "./components/todo-dashboard/todo-dashboa
 import { StdDashboardComponent } from "./components/std-dashboard/std-dashboard.component";
 import { PostDashboardComponent } from "./components/post-dashboard/post-dashboard.component";
 import { MovieDashboardComponent } from "./components/movie-dashboard/movie-dashboard.component";
+import { Post2DashboardComponent } from "./components/post2-dashboard/post2-dashboard.component";
 
 
 const routes : Routes = [
@@ -27,6 +28,10 @@ const routes : Routes = [
     {
         path:'movies',
         component:MovieDashboardComponent
+    },
+    {
+        path:'posts2',
+        component:Post2DashboardComponent
     }
 ]
 

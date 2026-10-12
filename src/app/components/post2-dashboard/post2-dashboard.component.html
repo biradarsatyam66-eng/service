@@ -1,0 +1,18 @@
+<div class="row mt-2">
+    <div class="col-md-6 offset-md-3">
+        <app-post2-form></app-post2-form>
+    </div>
+</div>
+<hr class="bg-primary">
+<div class="row" *ngIf="postarr.length>0;else nodata">
+    <div class="col-md-4 mb-2" *ngFor="let post of postarr">
+        <app-post2-card
+        [getpost]="post"
+        ></app-post2-card>
+    </div>
+</div>
+<ng-template #nodata>
+    <p class="alert alert-warning">
+        Currently No Post Are Found !!!
+    </p>
+</ng-template>

@@ -1,0 +1,18 @@
+<div class="card h-100">
+    <div class="card-header">
+        <h2 class="m-0">{{getpost.title}}</h2>
+    </div>
+    <div class="card-body">
+        {{getpost.body}}
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+
+        <button 
+        (click)="onedit(getpost)"
+        mat-mini-fab color="primary"><mat-icon>edit</mat-icon></button>
+
+        <button 
+        (click)="ondelete(getpost.id)"
+        mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+    </div>
+</div>

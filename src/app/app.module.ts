@@ -26,6 +26,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MovieDashboardComponent } from './components/movie-dashboard/movie-dashboard.component';
 import { MovieFormComponent } from './components/movie-dashboard/movie-form/movie-form.component';
 import { MovieCardComponent } from './components/movie-dashboard/movie-card/movie-card.component';
+import { Post2DashboardComponent } from './components/post2-dashboard/post2-dashboard.component';
+import { Post2FormComponent } from './components/post2-dashboard/post2-form/post2-form.component';
+import { Post2CardComponent } from './components/post2-dashboard/post2-card/post2-card.component';
 
 
 
@@ -45,7 +48,10 @@ import { MovieCardComponent } from './components/movie-dashboard/movie-card/movi
     NavbarComponent,
     MovieDashboardComponent,
     MovieFormComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    Post2DashboardComponent,
+    Post2FormComponent,
+    Post2CardComponent
   ],
   imports: [
     BrowserModule,
